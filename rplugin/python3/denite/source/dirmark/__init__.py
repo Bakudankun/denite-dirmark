@@ -60,7 +60,8 @@ class Source(Base):
 
         return [
             {
-                'word': f"[{v['name']}] {v['path']}",
+                'word': v['name'] if v['name'] else v['path'],
+                'abbr': f"[{v['name']}] {v['path']}",
                 'action__name': v['name'],
                 'action__group': group,
                 'action__path': v['path'],
